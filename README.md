@@ -1,28 +1,20 @@
-ETL Project - Stocks
+# ETL Project - Stocks
 
-Finding Data
+## Data sets extracted
 
-Your project must use 2 or more sources of data. We recommend the following sites to use as sources of data:
+[Yahoo Stock Data](https://finance.yahoo.com/most-active)
+[Yahoo ETF Data](https://finance.yahoo.com/etfs)
 
-Stock data from yahoo.com
-ETF data from yahoo.com
+## Data transformation
 
+We transformed the data in jupyter notebook using Pandas to first read HTML, then used new data types, column headers, and filtered stocks with a market cap of over 100 billion.
 
-Data Cleanup & Analysis
+## Data loading
 
-Once you have identified your datasets, perform ETL on the data. Make sure to plan and document the following:
+We then loaded our data into a relational SQLAlchemy database[Stock Database](ETL_Project_Stocks\wolves_db.sql)
 
+### Tools and dependencies
 
-We extracted data from yahoo.com
-We transformed the data in jupyter notebook with new data types, column headers, and only used stocks with a market cap of over 100 billion.
-We then loaded our data into a relational MySQL database.
-
-
-Project Report
-
-At the end of the week, your team will submit a Final Report that describes the following:
-
-
-Extract: your original data sources and how the data was formatted (CSV, JSON, pgAdmin 4, etc).
-Transform: what data cleaning or transformation was required.
-Load: the final database, tables/collections, and why this was chosen.
+import pandas as pd
+from sqlalchemy import create_engine
+import datetime
